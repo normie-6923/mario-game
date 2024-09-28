@@ -1,0 +1,235 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+.backgroundimage{
+     background-image: url(bodybg.png);
+     background-size: contain;
+     height: 100vh;
+     width: 100vw;
+     filter: blur(10px);
+     position: absolute;
+     
+}
+.play{
+    box-shadow: 4px 5px 0px 2px rgb(64, 64, 64);
+    background-color: rgb(216, 213, 173);
+    color: rgb(91, 93, 89);
+    position: absolute;
+    z-index: 1;
+    
+    height: 30px;
+    width: 100px;
+    border: none;
+    font-family: Poppins;
+    cursor: pointer;
+}
+.play:hover{
+    transform: scale(1.05);
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.gamescore{
+  
+    position: relative;
+    right: 211px;
+    top: 1px;
+}
+.controls{
+    background-image: url(controls.png);
+    
+    background-size: cover;
+    height: 400px;
+    width: 500px;
+   position: absolute;
+    
+}
+.score{
+    font-family: Poppins;
+    font-size: 20px;
+    color: rgb(255, 255, 255);;
+}
+.playagain{
+    box-shadow: 4px 5px 0px 2px rgb(64, 64, 64);
+    background-color: rgb(216, 213, 173);
+    color: rgb(91, 93, 89);
+    text-decoration: none;
+    font-family: Poppins;
+    height: 30px;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 1px;
+    border: none;
+    z-index: 1;
+    
+}
+.playagain:hover{
+transform: scale(1.02);
+}
+.mainscreen{
+    box-shadow: 5px 5px 10px 0px black;
+    
+    margin: 0;
+    padding: 0;
+    height: 400px;
+    width: 500px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    overflow: hidden;
+    
+}
+.elements{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: baseline;
+}
+   .background{
+    background-image: url(background.png);
+    height: 400px;
+    width: 500px;
+    background-repeat: repeat-x;
+    animation: backgroundmove 100s linear infinite ;
+   }
+    @keyframes backgroundmove {
+        from{
+background-position: 0 0;
+        }
+        to{
+background-position: -100vw 0;
+        }
+        
+    }
+.villain1{
+    
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    margin: 0;
+    
+    position: absolute;
+    bottom: 35px;
+    left: 500px;
+animation: villainanimation 3s linear infinite;
+
+    
+   
+}
+
+@keyframes villainanimation {
+    
+    from{
+    left:100vw
+    }
+    to{
+    left:-10vw
+    }
+    }
+    .villain2{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        transform: scaleX(-1);
+        bottom: 35px;
+        left: 100vw;
+        animation: villainanimation2 4s linear 1s infinite;
+        
+        
+    }
+    @keyframes villainanimation2 {
+        0%{
+             
+            left: 100vw;
+        }
+     20%{
+        left: -10vw;
+      }
+        100%{
+            left: -250vw;
+        }
+        
+    }
+
+#mario{
+    height: 50px;
+    width: 25px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    bottom: 30px;
+   
+    
+
+}
+@keyframes jumping {
+    0%{
+bottom: 30px;
+    }
+    50%{
+bottom: 130px;
+    }
+    100%{
+bottom: 30px;
+
+    }
+}
+#floor{
+height: 35px;
+width: 5000px;
+background-image: url(floor2.png);
+background-repeat: repeat-x;
+position: absolute;
+bottom: 0;
+margin: 0;
+padding: 0;
+animation: flooranimation 4s linear infinite ;
+
+}
+@keyframes flooranimation {
+    from{
+background-position: 0 0;
+    }
+    to{
+background-position: -100vw 0;
+    }
+}
+
+.gameoverbox{
+    
+    position: absolute;
+    box-shadow: 4px 5px 0px 2px rgb(64, 64, 64);
+    background-color: rgb(216, 213, 173);
+    height: 100px;
+    width: 200px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.gameover{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(63, 72, 64);
+    font-family: Poppins;
+   
+
+}
+.yourscore{
+    font-family: Poppins;
+    font-size: 10px;
+    color: rgb(59, 63, 66);
+}
+body{
+    background-color: rgb(255, 255, 255);
+}

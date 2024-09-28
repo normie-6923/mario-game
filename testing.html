@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            height: 100px;
+            width: 100px;
+            background-color: black;
+            position: fixed;
+            bottom: 0;
+            color: white;
+            
+
+            
+            
+        }
+        @keyframes harryka {
+            0%{
+bottom:0;
+            }
+            50%{
+bottom:100px;
+            }
+            100%{
+bottom:0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+<script>
+let box = document.querySelector(".box")
+let speed = 5
+let intervalId = null
+let isjumping = false
+
+function moveright(){
+    let moveR = parseInt(getComputedStyle(box).left,10) || 0
+    box.style.left = `${moveR + speed}px`
+}
+window.addEventListener("keydown",(e)=>{
+    if(e.key === "ArrowRight" && !intervalId){
+  
+    intervalId = setInterval(moveright,10)
+    }
+
+})
+window.addEventListener("keyup",(e)=>{
+    if(e.key === "ArrowRight"){
+        clearInterval(intervalId)
+        intervalId = null
+    }
+})
+window.addEventListener("keydown",(e)=>{
+    if(e.key === " "&& !isjumping){
+        isjumping = true
+        box.style.animation = "none"
+        box.offsetHeight;
+        box.style.animation = "harryka 1s linear forwards"
+
+        setTimeout(()=>{
+            isjumping = false
+        },900)
+       
+        
+    }
+})
+function villainmoving(){
+    
+}
+  
+</script>
+</html>
